@@ -1,0 +1,21 @@
+     1                                  extern _printf,_scanf
+     2                                  segment .data
+     3 00000000 0A                      x 	db   10
+     4 00000001 0F                      x2  db	15
+     5                                  
+     6                                  segment .bss
+     7 00000000 <res 00000004>          y	resd 	1
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:
+    12 00000000 8A25[00000000]          	mov ah,[x]
+    13 00000006 8A3D[01000000]          	mov bh,[x2]
+    14 0000000C 883D[00000000]          	mov [x],bh
+    15 00000012 8825[01000000]          	mov [x2],ah
+    16 00000018 C3                      ret
+    17                                  
+    18                                  
+    19                                  
+    20                                  
+    21                                  
