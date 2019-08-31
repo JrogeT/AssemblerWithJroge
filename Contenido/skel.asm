@@ -13,4 +13,5 @@ global _main
 _main:
 ;Codigo
 	mov eax,1
+	mov ebx,1
 ret
