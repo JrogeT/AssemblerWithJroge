@@ -5,15 +5,22 @@
      5                                  segment .data
      6                                  ;Variables inicializadas int x = 10;
      7 00000000 0A                      x	db	10
-     8                                  
-     9                                  segment .bss
-    10                                  ;Variables NO inicializadas int y;
-    11 00000000 <res 00000001>          y	resb	1
-    12                                  								
-    13                                  segment .text
-    14                                  global _main
-    15                                  _main:
-    16                                  ;Codigo
-    17 00000000 B801000000              	mov eax,1
-    18 00000005 BB01000000              	mov ebx,1
-    19 0000000A C3                      ret
+     8 00000001 0A00                    x2	dw	0x000a  	; 00 0a -> 0a 00
+     9 00000003 0A                      x3	db	0b1010
+    10 00000004 3412                    x4	dw	0x1234		; 12 34 -> 34 12
+    11 00000006 78563412                x5	dd	0x12345678	; -> 78 56 34 12
+    12 0000000A 3402                    x6	dw	0x234		; 23 4  -> 4 23  MAL
+    13                                  					; 02 34 -> 34 02 BIEN 
+    14                                  
+    15                                  segment .bss
+    16                                  ;Variables NO inicializadas int y;
+    17 00000000 <res 00000001>          y	resb	1
+    18 00000001 <res 0000000C>          y2	resd	3
+    19                                  
+    20                                  segment .text
+    21                                  global _main
+    22                                  _main:
+    23                                  ;Codigo
+    24 00000000 B801000000              	mov eax,1
+    25 00000005 BB01000000              	mov ebx,1
+    26 0000000A C3                      ret
