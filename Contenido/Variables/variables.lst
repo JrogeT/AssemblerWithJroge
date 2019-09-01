@@ -1,0 +1,19 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o variables.o variables.asm -l variables.lst
+     4                                  ;gcc -o variables.exe variables.o
+     5                                  segment .data
+     6                                  ;Variables inicializadas int x = 10;
+     7 00000000 0A                      x	db	10
+     8                                  
+     9                                  segment .bss
+    10                                  ;Variables NO inicializadas int y;
+    11 00000000 <res 00000001>          y	resb	1
+    12                                  								
+    13                                  segment .text
+    14                                  global _main
+    15                                  _main:
+    16                                  ;Codigo
+    17 00000000 B801000000              	mov eax,1
+    18 00000005 BB01000000              	mov ebx,1
+    19 0000000A C3                      ret
