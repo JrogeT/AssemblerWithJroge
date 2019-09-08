@@ -1,0 +1,30 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o operadoresLogicos.o operadoresLogicos.asm -l operadoresLogicos.lst
+     4                                  ;gcc -o operadoresLogicos.exe operadoresLogicos.o
+     5                                  segment .data
+     6 00000000 01                      x	db	1 
+     7                                  segment .bss
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:
+    12 00000000 8A25[00000000]          	mov ah,[x]	;AH = 0000 0001 
+    13 00000006 B702                    	mov bh,2 	;BH = 0000 0010
+    14 00000008 08FC                    	or ah,bh	;AH = 0000 0011
+    15 0000000A B704                    	mov bh,4    ;BH = 0000 0100
+    16 0000000C 20FC                    	and ah,bh   ;AH = 0000 0000
+    17 0000000E 30FF                    	xor bh,bh   ;BH = 0000 0000
+    18 00000010 B403                    	mov ah,3    ;AH = 0000 0011
+    19 00000012 8A3D[00000000]          	mov bh,[x]	;BH = 0000 0001
+    20 00000018 30E7                    	xor bh,ah	;BH = 0000 0010
+    21 0000001A F6D7                    	not bh 		;BH = 1111 1101
+    22 0000001C B800000000              	mov eax,0	;EAX = 0x0000 0000
+    23 00000021 F7D0                    	not eax 	;EAX = 0xFFFF FFFF = (-1)
+    24 00000023 F7D8                    	neg eax		;EAX = 0x0000 0001 = (+1)
+    25 00000025 C3                      ret
+    26                                  
+    27                                  
+    28                                  
+    29                                  
+    30                                  
