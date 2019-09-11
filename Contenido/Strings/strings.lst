@@ -1,0 +1,44 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o strings.o strings.asm -l strings.lst
+     4                                  ;gcc -o strings.exe strings.o
+     5                                  segment .data
+     6 00000000 4D656E73616A6500        cadena	db	"Mensaje",0
+     7 00000008 4D656E73616A6500        caden2  db  'Mensaje',0
+     8 00000010 4D656E73616A6500        caden3  db  'M','e','n','s','a','j','e',0
+     9 00000018 4D656E73616A6500        caden4  db  "M","e","n","s","a","j","e",0
+    10 00000020 4D656E73616A6500        caden5  db  'Me','n','s','aje',0
+    11                                  
+    12                                  ;cadena db	M,	;00409000 + (i)
+    13                                  ;			e,	;00409000 + (i)
+    14                                  ;			n,	;00409000 + (i)
+    15                                  ;			s,	;00409000 + (i)
+    16                                  ;			a,  ;00409000 + (i)
+    17                                  ;			j,  ;00409000 + (i)
+    18                                  ;			e,  ;00409000 + (i)
+    19                                  ;			0   ;00409000 + (i)
+    20                                  
+    21                                  segment .bss
+    22                                  
+    23                                  segment .text
+    24                                  global _main
+    25                                  _main:
+    26                                  	;MAYUSCULAS
+    27 00000000 A0[04000000]            	mov al,[cadena+4]	;a = 0x61
+    28 00000005 8A1D[0E000000]          	mov bl,[caden2+6]	;e = 0x65
+    29 0000000B 24DF                    	and al,0xDF
+    30 0000000D 80E3DF                  	and bl,0xDF
+    31 00000010 A2[04000000]            	mov [cadena+4],al	;A = 0x41
+    32 00000015 881D[0E000000]          	mov [caden2+6],bl	;E = 0x45
+    33                                  	;MINUSCULAS
+    34 0000001B A0[04000000]            	mov al,[cadena+4]	;A = 0x41
+    35 00000020 8A1D[0E000000]          	mov bl,[caden2+6]	;E = 0x45
+    36 00000026 0C20                    	or al,0x20
+    37 00000028 80CB20                  	or bl,0x20
+    38 0000002B A2[04000000]            	mov [cadena+4],al	;a = 0x61
+    39 00000030 881D[0E000000]          	mov [caden2+6],bl	;e = 0x65
+    40 00000036 C3                      ret
+    41                                  
+    42                                  
+    43                                  
+    44                                  
