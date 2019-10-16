@@ -1,0 +1,17 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o dowhile.o dowhile.asm -l dowhile.lst
+     4                                  ;gcc -o dowhile.exe dowhile.o
+     5                                  segment .data
+     6                                  
+     7                                  segment .bss
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:
+    12 00000000 B800000000                  mov eax,0
+    13                                  hacer:
+    14 00000005 40                          inc eax
+    15 00000006 83F805                      cmp eax,5
+    16 00000009 7EFA                        jle hacer
+    17 0000000B C3                      ret
