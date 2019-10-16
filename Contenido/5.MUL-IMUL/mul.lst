@@ -1,0 +1,29 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o mul.o mul.asm -l mul.lst
+     4                                  ;gcc -o mul.exe mul.o
+     5                                  segment .data
+     6                                  
+     7                                  segment .bss
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:
+    12 00000000 B31A                    	mov bl,26
+    13 00000002 B00A                    	mov al,10
+    14 00000004 F6E3                    	mul bl
+    15                                  	
+    16 00000006 66BB0410                	mov bx,4100
+    17 0000000A 66B80401                	mov ax,260
+    18 0000000E 66F7E3                  	mul bx
+    19                                  	
+    20 00000011 BB00000080              	mov ebx,0x80000000
+    21 00000016 B800000080              	mov eax,0x80000000
+    22 0000001B F7E3                    	mul ebx
+    23 0000001D C3                      ret
+    24                                  
+    25                                  
+    26                                  
+    27                                  
+    28                                  
+    29                                  

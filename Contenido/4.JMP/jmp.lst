@@ -1,0 +1,42 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o jmp.o jmp.asm -l jmp.lst
+     4                                  ;gcc -o jmp.exe jmp.o
+     5                                  segment .data
+     6                                  ;Variables inicializadas
+     7                                  
+     8                                  segment .bss
+     9                                  ;Variables NO inicializadas
+    10                                  
+    11                                  segment .text
+    12                                  global _main
+    13                                  _main:
+    14 00000000 EB05                    	jmp etiqueta1	;SALTO AUTOMATICO
+    15 00000002 B801000000              	mov eax,1
+    16                                  etiqueta1:
+    17 00000007 B800000000              	mov eax,0
+    18 0000000C 83E801                  	sub eax,1
+    19 0000000F 7205                    	jc et2			;SALTO SI C = 1
+    20 00000011 BB01000000              	mov ebx,1
+    21                                  et2:
+    22 00000016 B801000000              	mov eax,1
+    23 0000001B 83E801                  	sub eax,1
+    24 0000001E 7405                    	jz	et3			;SALTO SI Z = 1
+    25 00000020 B901000000              	mov ecx,1
+    26                                  et3:		
+    27 00000025 B801000000              	mov eax,1
+    28 0000002A 83E802                  	sub eax,2
+    29 0000002D 7805                    	js et4			;SALTO SI S = 1
+    30 0000002F BA01000000              	mov edx,1
+    31                                  et4:
+    32                                  	;jnc			;SALTO SI C = 0
+    33                                  	;jnz			;SALTO SI Z = 0
+    34                                  	;jns			;SALTO SI S = 0
+    35                                  
+    36 00000034 B47F                    	mov ah,127
+    37 00000036 80C401                  	add ah,1
+    38 00000039 7005                    	jo et5			;SALTO SI O = 1
+    39 0000003B B801000000              	mov eax,1	
+    40                                  et5:
+    41                                  	;jno			;SALTO SI O = 0
+    42 00000040 C3                      ret

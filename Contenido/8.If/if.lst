@@ -1,0 +1,57 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o if.o if.asm -l if.lst
+     4                                  ;gcc -o if.exe if.o
+     5                                  segment .data
+     6                                  
+     7                                  segment .bss
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:
+    12 00000000 B006                    	mov al,6
+    13 00000002 B305                    	mov bl,5
+    14                                  
+    15                                  	;CONDICIONES CON SIGNO Y SIN SIGNO
+    16 00000004 38D8                    	cmp al,bl
+    17 00000006 7409                    	jz et1				;if(al==bl){saltar a et1}
+    18                                  
+    19 00000008 38D8                    	cmp al,bl
+    20 0000000A 7505                    	jnz et1				;if(al!=bl){saltar a et1}
+    21                                  
+    22                                  	;PRUEBA DE NUMEROS CS Y SS
+    23                                  	; mov al,0x00	;SS al=0	CS al=0
+    24                                  	; mov bl,0xFF	;SS bl=255	CS bl=-1
+    25                                  	; cmp al,bl
+    26                                  	; jg et1			;if(al>bl){saltar a et1}
+    27                                  	
+    28                                  	;CONDICIONES SIN SIGNO
+    29                                  	; cmp al,bl
+    30                                  	; ja et1   	;if(al>bl){saltar a et1}
+    31                                  
+    32                                  	; cmp al,bl
+    33                                  	; jae et1		;if(al>=bl){saltar a et1}
+    34                                  
+    35                                  	; cmp al,bl
+    36                                  	; jb et1   	;if(al<bl){saltar a et1}
+    37                                  
+    38                                  	; cmp al,bl
+    39                                  	; jbe et1		;if(al<=bl){saltar a et1}
+    40                                  
+    41                                  	;CONDICIONES CON SIGNO
+    42                                  	; cmp al,bl
+    43                                  	; jg et1			;if(al>bl){saltar a et1}
+    44                                  	
+    45                                  	; cmp al,bl
+    46                                  	; jge et1			;if(al>=bl){saltar a et1}
+    47                                  
+    48                                  	; cmp al,bl
+    49                                  	; jl et1			;if(al<bl){saltar a et1}
+    50                                  	
+    51                                  	; cmp al,bl
+    52                                  	; jle et1			;if(al<=bl){saltar a et1}
+    53                                  
+    54 0000000C B9FFFFFFFF              	mov ecx,-1
+    55                                  et1:
+    56 00000011 B901000000              	mov ecx,1
+    57 00000016 C3                      ret

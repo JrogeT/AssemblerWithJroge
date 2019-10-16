@@ -1,0 +1,37 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o shifts-ro.o shifts-ro.asm -l shifts-ro.lst
+     4                                  ;gcc -o shifts-ro.exe shifts-ro.o
+     5                                  segment .data
+     6                                  
+     7                                  segment .bss
+     8                                  
+     9                                  segment .text
+    10                                  global _main
+    11                                  _main:	
+    12 00000000 B009                    	mov al,0x09
+    13 00000002 D0E8                    	shr al,1
+    14                                  	;al=9/(2^1)=9/2=4
+    15                                  	;NUMEROS IMPARES
+    16                                  	;C=1
+    17                                  	
+    18 00000004 B004                    	mov al,0x04
+    19 00000006 D0E8                    	shr al,1
+    20                                  	;al=9/(2^1)=9/2=4
+    21                                  	;NUMEROS PARES
+    22                                  	;C=0
+    23                                  	
+    24 00000008 B001                    	mov al,0x01	;0000 0001
+    25 0000000A D0C8                    	ror al,1
+    26                                  				;1000 0000
+    27 0000000C C0C002                  	rol al,2
+    28                                  				;0000 0010
+    29 0000000F C3                      ret
+    30                                  
+    31                                  
+    32                                  
+    33                                  
+    34                                  
+    35                                  
+    36                                  
+    37                                  
