@@ -9,9 +9,9 @@ segment .bss
 segment .text
 global _main
 _main:
-    mov eax,0
+
 hacer:          ;do{
-    inc eax     ;   eax++;
-    cmp eax,5   ;
+
+    cmp eax,5
     jle hacer   ;}while(eax<=5);
 ret

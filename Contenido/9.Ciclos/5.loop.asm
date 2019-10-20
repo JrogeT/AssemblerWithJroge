@@ -9,11 +9,9 @@ segment .bss
 segment .text
 global _main
 _main:
-    mov eax,1
-    mov ecx,5
+    mov ecx,5   ;OJO: siempre tiene que ser el registro ECX
 ciclo:
-    ;Esto se repetirá ecx veces
-    inc eax
     
-    loop ciclo
+    loop ciclo  ;internamente:  dec ecx
+                ;               jnz ciclo
 ret

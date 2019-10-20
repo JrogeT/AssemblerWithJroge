@@ -9,10 +9,9 @@ segment .bss
 segment .text
 global _main
 _main:
-    mov eax,0
 repetir:        ;repeat{
-    inc eax     ;   eax++;
-    cmp eax,5   ;
+
+    cmp eax,5
     je salir    ;}until(eax==5);
     jmp repetir
 salir:

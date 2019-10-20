@@ -9,11 +9,13 @@ segment .bss
 segment .text
 global _main
 _main:
-    mov eax,1
+
 condicion:
-    cmp eax,5           ;while(eax <=5)
+    cmp eax,5           ;while(eax <=  5)
     jg salirDelCiclo    ;{
-    inc eax             ;    eax++;
+
+    
+
     jmp condicion       ;}
 salirDelCiclo:
 ret
