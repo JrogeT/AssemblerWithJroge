@@ -6,16 +6,13 @@ segment .bss
 segment .text
 global _main
 _main:
+;Convertir una cadena a minusculas
 	mov ebx,cadena
 ciclo:
 	mov al,[ebx]
 	cmp al,0
 	je finDeCadena
-	cmp al,0x20
-	je noConvertir
-	;or al,0x20
-	add al,0x20
-noConvertir:
+	or al,0x20
 	mov [ebx],al
 	inc ebx
 	jmp ciclo

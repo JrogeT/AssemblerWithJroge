@@ -1,12 +1,13 @@
 segment .data
 arreglo	dd	-1,2,-4,5,-7
-;prom = (-1 + -7)/2 = -4
+
 segment .bss
 prom	resd	1
 
 segment .text
 global _main
 _main:
+;Hallar el promedio de los elementos impares negativos de un arreglo
 	mov ecx,5
 	mov ebx,arreglo
 	mov esi,0
@@ -30,8 +31,8 @@ noSirve:
 	mov eax,esi
 	cdq
 	idiv ebx
-	mov ecx,edx
-	mov ebx,edx
+	mov ecx,edx;IGNORAR
+	mov ebx,edx;IGNORAR
 	mov dword[prom],eax
 ret
 

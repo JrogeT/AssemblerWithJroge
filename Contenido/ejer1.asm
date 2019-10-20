@@ -6,7 +6,6 @@ prom	resd	1
 segment .text
 global _main
 _main:
-;Prom de los n primeros numeros pares
 ;((k*1)^3 + (k*2)^3 + (k*3)^3 + ... + (k*n)^3)/n
 	mov ecx,[n]
 	mov ebx,[k]
@@ -15,7 +14,6 @@ ciclo:
 	mov eax,ebx
 	mul ebx
 	mul ebx
-	;EAX=eax^3
 	add esi,eax
 	add ebx,[k]
 	loop ciclo
