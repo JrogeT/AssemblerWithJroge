@@ -1,0 +1,81 @@
+     1                                  ;Guardar el archivo
+     2                                  ;path C:\Ensamblador\MinGW\bin
+     3                                  ;nasm -f win32 -o sub.o sub.asm -l sub.lst
+     4                                  ;gcc -o sub.exe sub.o
+     5                                  segment .data
+     6                                  ;Variables inicializadas
+     7 00000000 02000000                n	dd	2
+     8                                  
+     9                                  segment .bss
+    10                                  ;Variables NO inicializadas
+    11                                  
+    12                                  segment .text
+    13                                  global _main
+    14                                  _main:
+    15                                  	;call subR=	push eip
+    16                                  	;			jmp subR
+    17 00000000 FF35[00000000]          	push dword[n]
+    18 00000006 FF35[00000000]          	push dword[n]
+    19 0000000C FF35[00000000]          	push dword[n]
+    20 00000012 E812000000              	call numeroPorDos
+    21 00000017 89C3                    	mov ebx,eax
+    22 00000019 83C40C                  	add esp,12
+    23                                  	;add esp,(cantidad de pushes)*4
+    24 0000001C C3                      ret
+    25                                  
+    26                                  
+    27                                  
+    28                                  
+    29                                  
+    30                                  
+    31                                  
+    32                                  
+    33                                  
+    34                                  
+    35                                  
+    36                                  
+    37                                  
+    38                                  ;--------------------SUBRUTINAS------------------
+    39                                  ;Crear una subrutina para retornar el numero 5
+    40                                  ;public int numeroCinco(){
+    41                                  ;	return 5;
+    42                                  ;}
+    43                                  numeroCinco:
+    44                                  ;prologo:
+    45 0000001D 55                      push ebp
+    46 0000001E 89E5                    mov ebp,esp
+    47                                  
+    48 00000020 B805000000              	mov eax,5
+    49                                  
+    50                                  ;epilogo:
+    51 00000025 89EC                    mov esp,ebp
+    52 00000027 5D                      pop ebp
+    53 00000028 C3                      ret	;pop eip
+    54                                  
+    55                                  ;Crear una subrutina para retornar el valor de n*2
+    56                                  ;public int numeroPorDos(int n){
+    57                                  ;	return n*2;
+    58                                  ;}
+    59                                  numeroPorDos:
+    60                                  ;Prologo
+    61 00000029 55                      push ebp
+    62 0000002A 89E5                    mov ebp,esp
+    63                                  	
+    64 0000002C 8B4508                  	mov eax,[ebp+8]
+    65 0000002F BB02000000              	mov ebx,2
+    66 00000034 F7E3                    	mul ebx
+    67                                  	;eax=0x0000 0004
+    68                                  	
+    69                                  ;Epilogo
+    70 00000036 89EC                    mov esp,ebp
+    71 00000038 5D                      pop ebp
+    72 00000039 C3                      ret
+    73                                  
+    74                                  
+    75                                  
+    76                                  
+    77                                  
+    78                                  
+    79                                  
+    80                                  
+    81                                  
