@@ -4,7 +4,7 @@
  *
  * Functions for splitting pathnames into dirname and basename components.
  *
- * $Id: libgen.h,v 916f43b3e665 2014/11/08 23:54:51 keithmarshall $
+ * $Id: libgen.h,v eb8731667695 2014/11/08 23:54:51 keithmarshall $
  *
  * Written by Keith Marshall <keithmarshall@users.sourceforge.net>
  * Copyright (C) 2006, 2007, 2014, MinGW.org Project

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://www.mingw.org" issue="2015070300">
+<software-distribution project="MinGW" home="http://www.mingw.org" issue="2018011700">
 
   <!-- File: msys-package-list.xml -->
 
@@ -23,7 +23,7 @@
   <package-list issue="2012073100" catalogue="msys-bison" />
   <package-list issue="2013020400" catalogue="msys-bzip2" />
   <package-list issue="2012073100" catalogue="msys-console" />
-  <package-list issue="2012112200" catalogue="msys-core" />
+  <package-list issue="2016071500" catalogue="msys-core" />
   <package-list issue="2012073100" catalogue="msys-coreutils" />
   <package-list issue="2012073100" catalogue="msys-crypt" />
   <package-list issue="2012073100" catalogue="msys-cvs" />
@@ -31,7 +31,7 @@
   <package-list issue="2012073100" catalogue="msys-dash" />
   <package-list issue="2012073100" catalogue="msys-diffutils" />
   <package-list issue="2012073100" catalogue="msys-diffstat" />
-  <package-list issue="2015070300" catalogue="msys-dos2unix" />
+  <package-list issue="2017122200" catalogue="msys-dos2unix" />
   <package-list issue="2012073100" catalogue="msys-expat" />
   <package-list issue="2012073100" catalogue="msys-file" />
   <package-list issue="2012073100" catalogue="msys-findutils" />
@@ -83,6 +83,7 @@
 
   <!-- "real" packages ~~ user contributed -->
   <package-list issue="2011112700" catalogue="msys-mksh" />
+  <package-list issue="2016031600" catalogue="msys-ncurses" />
 
   <!-- "virtual" packages -->
   <package-list issue="2013072300" catalogue="msys-base" />

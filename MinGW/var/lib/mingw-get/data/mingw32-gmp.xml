@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://www.mingw.org" issue="2013090900">
+<software-distribution project="MinGW" home="http://www.mingw.org" issue="2018122800">
 
   <!-- File: mingw32-gmp.xml ~~ mingw-get package description for gmp -->
 
   <package-collection subsystem="mingw32">
-    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+    <download-host uri="http://osdn.net/dl/mingw/%F" />
 
     <!-- Provides the package descriptions for the gmp library, which -->
     <!-- is a runtime prerequisite for modern versions of GCC.        -->
@@ -14,9 +14,8 @@
       <description lang="en" title="The GNU Multiple Precision Arithmetic Library" >
         <paragraph>
           GNU MP is a library for arbitrary precision arithmetic, operating on
-          signed integers, rational numbers, and floating point numbers.  It
-          has a rich set of functions, and the functions have a regular
-          interface.
+          signed integers, rational numbers, and floating point numbers.  It has
+          a rich set of functions, and the functions have a regular interface.
         </paragraph>
         <paragraph>
           The MinGW/MSYS project provides two gmp packages: the native win32
@@ -33,31 +32,35 @@
         </paragraph>
       </description>
 
-      <source tarname="gmp-%-mingw32-src.tar.lzma" />
-      <licence tarname="gmp-%-mingw32-lic.tar.lzma" />
+      <source tarname="gmp-%-mingw32-src.tar.%" />
+      <licence tarname="gmp-%-mingw32-lic.tar.%" />
 
       <component class="dev">
-	<release tarname="gmp-5.1.2-1-mingw32-dev.tar.lzma" >
-	  <requires eq="mingw32-libgmpxx-%-mingw32-dll-4.tar" />
-	</release>
-        <release tarname="gmp-5.0.1-1-mingw32-dev.tar.lzma" >
-          <requires eq="mingw32-libgmp-%-mingw32-dll-10.tar" />
-          <requires eq="mingw32-libgmpxx-%-mingw32-dll-4.tar" />
-        </release>
+        <release tarname="gmp-6.1.2-3-mingw32-dev.tar.xz" />
+        <requires eq="mingw32-libgmpxx-%-mingw32-dll-4.tar" />
+        <requires eq="mingw32-libgmp-%-mingw32-dll-10.tar" />
       </component>
 
       <component class="doc">
-        <release tarname="gmp-5.1.2-1-mingw32-doc.tar.lzma" />
-        <release tarname="gmp-5.0.1-1-mingw32-doc.tar.lzma" />
+        <description lang="en">
+          <paragraph>This "doc" component package is obsolete; documentation
+            is now provided in the "info" component package.
+          </paragraph>
+          <paragraph>There is no longer any useful content in this component
+            package; if it has been installed, you may safely remove it.
+          </paragraph>
+        </description>
+        <release tarname="gmp-5.1.2-1-mingw32-doc.tar.lzma">
+          <download tarname="none" />
+        </release>
       </component>
 
       <component class="lic">
-        <release tarname="gmp-5.1.2-1-mingw32-lic.tar.lzma" />
-        <release tarname="gmp-5.0.1-1-mingw32-lic.tar.lzma" />
+        <release tarname="gmp-6.1.2-3-mingw32-lic.tar.xz" />
       </component>
 
       <component class="info">
-        <release tarname="gmp-5.1.2-1-mingw32-info.tar.lzma" />
+        <release tarname="gmp-6.1.2-3-mingw32-info.tar.xz" />
       </component>
     </package>
 
@@ -66,9 +69,8 @@
       <description lang="en" title="The GNU Multiple Precision Arithmetic Library" >
         <paragraph>
           GNU MP is a library for arbitrary precision arithmetic, operating on
-          signed integers, rational numbers, and floating point numbers.  It
-          has a rich set of functions, and the functions have a regular
-          interface.
+          signed integers, rational numbers, and floating point numbers.  It has
+          a rich set of functions, and the functions have a regular interface.
         </paragraph>
         <paragraph>
           The MinGW/MSYS project provides two libgmp packages: the native win32
@@ -88,14 +90,11 @@
         </paragraph>
       </description>
 
-      <source tarname="gmp-%-mingw32-src.tar.lzma" />
-      <licence tarname="gmp-%-mingw32-lic.tar.lzma" />
+      <source tarname="gmp-%-mingw32-src.tar.%" />
+      <licence tarname="gmp-%-mingw32-lic.tar.%" />
 
       <component class="dll">
-        <release tarname="libgmp-5.1.2-1-mingw32-dll-10.tar" >
-	  <download tarname="gmp-5.1.2-1-mingw32-dll.tar.lzma" />
-	</release>
-        <release tarname="libgmp-5.0.1-1-mingw32-dll-10.tar.lzma" />
+        <release tarname="libgmp-6.1.2-3-mingw32-dll-10.tar.xz" />
       </component>
     </package>
 
@@ -104,9 +103,8 @@
       <description lang="en" title="The GNU Multiple Precision Arithmetic Library" >
         <paragraph>
           GNU MP is a library for arbitrary precision arithmetic, operating on
-          signed integers, rational numbers, and floating point numbers.  It
-          has a rich set of functions, and the functions have a regular
-          interface.
+          signed integers, rational numbers, and floating point numbers.  It has
+          a rich set of functions, and the functions have a regular interface.
         </paragraph>
         <paragraph>
           The mingw32-libgmpxx package provides the C++ runtime library.  The
@@ -116,20 +114,18 @@
         </paragraph>
       </description>
 
-      <source tarname="gmp-%-mingw32-src.tar.lzma" />
-      <licence tarname="gmp-%-mingw32-lic.tar.lzma" />
+      <source tarname="gmp-%-mingw32-src.tar.%" />
+      <licence tarname="gmp-%-mingw32-lic.tar.%" />
 
       <component class="dll">
-        <release tarname="libgmpxx-5.1.2-1-mingw32-dll-4.tar.lzma" >
-	  <download tarname="none" />
-          <requires eq="libgmp-%-mingw32-dll-10.tar" />
-        </release>
-        <release tarname="libgmpxx-5.0.1-1-mingw32-dll-4.tar.lzma" >
-          <requires eq="libgmp-%-mingw32-dll-10.tar" />
-          <requires eq="libgcc-*-mingw32-dll-1.tar" />
-        </release>
+        <release tarname="libgmpxx-6.1.2-3-mingw32-dll-4.tar.xz" />
+        <requires eq="libgmp-%-mingw32-dll-10.tar" />
+        <requires eq="libgcc-*-mingw32-dll-1.tar" />
       </component>
     </package>
+
   </package-collection>
 </software-distribution>
-<!-- vim: set nocompatible expandtab fileformat=unix textwidth=80 tabstop=2 shiftwidth=2: -->
+
+<!-- vim: set nocompatible expandtab showcmd tabstop=2 shiftwidth=2: -->
+<!-- vim: set fileformat=unix textwidth=80: -->

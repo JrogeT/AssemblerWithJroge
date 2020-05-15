@@ -1,7 +1,7 @@
 /*
  * shlink.js
  *
- * $Id: shlink.js,v 0f864a5cad9e 2012/04/06 22:49:36 keithmarshall $
+ * $Id$
  *
  * Invoke the Windows Scripting Host to create or modify a windows shortcut,
  * with specified parameters.
@@ -382,4 +382,4 @@ for( var k = 0; k < options.length; k++ )
  */
 Shortcut.Save();
 
-/* $RCSfile: shlink.js,v $: end of file */
+/* $RCSfile$: end of file */

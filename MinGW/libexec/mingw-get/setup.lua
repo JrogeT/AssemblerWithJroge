@@ -1,7 +1,7 @@
 --
 -- setup.lua
 --
--- $Id: setup.lua,v 49e57abe7f83 2013/09/21 08:35:52 keithmarshall $
+-- $Id$
 --
 -- Lua 5.2 module providing common setup hooks for mingw-get.
 --
@@ -77,4 +77,4 @@
 --
    return M
 --
--- $RCSfile: setup.lua,v $: end of file */
+-- $RCSfile$: end of file */

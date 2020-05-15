@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://mingw.org" issue="2011101100">
+<software-distribution project="MinGW" home="http://mingw.org" issue="2016010800">
 
   <!-- File: mingw32-pdcurses.xml -->
 
@@ -7,6 +7,8 @@
     <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
 
     <package name="mingw32-pdcurses" alias="mingw32-PDCurses pdcurses PDCurses">
+      <affiliate group="MinGW Contributed Libraries" />
+
       <description lang="en" title="PDCurses: Public Domain Curses Implementation">
         <paragraph>Public Domain Curses, aka PDCurses, is an implementation of
           X/Open curses for multiple platforms.  This package provides normal,
@@ -39,6 +41,8 @@
     </package>
 
     <package name="mingw32-libpdcurses" alias="libpdcurses">
+      <affiliate group="MinGW Contributed Libraries" />
+
       <description lang="en" title="libpdcurses: Public Domain Curses Implementation" >
         <paragraph>Public Domain Curses, aka PDCurses, is an implementation of
           X/Open curses for multiple platforms.  This package provides normal,

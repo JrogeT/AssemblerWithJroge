@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://www.mingw.org" issue="2013100400">
+<software-distribution project="MinGW" home="http://www.mingw.org" issue="2020031700">
 
   <!-- File: mingw32-mingw-get.xml ~~ mingw-get self-upgrade manifest -->
 
   <package-collection subsystem="mingw32">
-    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+    <download-host uri="https://osdn.net/dl/mingw/%F" />
 
     <package name="mingw32-mingw-get" alias="mingw-get">
       <affiliate group="MinGW Base System" />
@@ -34,11 +34,7 @@
           </paragraph>
         </description>
 
-        <release tarname="mingw-get-0.6.2-mingw32-beta-20131004-1-bin.tar.xz" />
-        <release tarname="mingw-get-0.6.1-mingw32-beta-20130910-1-bin.tar.xz" />
-        <release tarname="mingw-get-0.6.0-mingw32-beta-20130904-1-bin.tar.xz" />
-        <release tarname="mingw-get-0.5-mingw32-beta-20120426-1-bin.tar.xz" />
-        <release tarname="mingw-get-0.4-mingw32-alpha-1-bin.tar.xz" />
+        <release tarname="mingw-get-0.6.3-mingw32-pre-20170905-1-bin.tar.xz" />
 
         <action class="post-install">
           setup = require "setup"
@@ -71,9 +67,7 @@
 
         <requires eq="mingw-get-%-mingw32-%-bin.tar" />
 
-        <release tarname="mingw-get-0.6.2-mingw32-beta-20131004-1-gui.tar.xz" />
-        <release tarname="mingw-get-0.6.1-mingw32-beta-20130910-1-gui.tar.xz" />
-        <release tarname="mingw-get-0.6.0-mingw32-beta-20130904-1-gui.tar.xz" />
+        <release tarname="mingw-get-0.6.3-mingw32-pre-20170905-1-gui.tar.xz" />
 
         <action class="post-install">
           setup = require "setup"
@@ -94,11 +88,7 @@
       </component>
 
       <component class="lic">
-        <release tarname="mingw-get-0.6.2-mingw32-beta-20131004-1-lic.tar.xz" />
-        <release tarname="mingw-get-0.6.1-mingw32-beta-20130910-1-lic.tar.xz" />
-        <release tarname="mingw-get-0.6.0-mingw32-beta-20130904-1-lic.tar.xz" />
-        <release tarname="mingw-get-0.5-mingw32-beta-20120426-1-lic.tar.xz" />
-        <release tarname="mingw-get-0.4-mingw32-alpha-1-lic.tar.xz" />
+        <release tarname="mingw-get-0.6.3-mingw32-pre-20170905-1-lic.tar.xz" />
       </component>
     </package>
 
@@ -121,11 +111,7 @@
       <source tarname="mingw-get-%-mingw32-%-src.tar.%" />
 
       <component class="bin">
-        <release tarname="pkginfo-0.6.2-mingw32-beta-20131004-1-bin.tar.xz" />
-        <release tarname="pkginfo-0.6.1-mingw32-beta-20130910-1-bin.tar.xz" />
-        <release tarname="pkginfo-0.6.0-mingw32-beta-20130904-1-bin.tar.xz" />
-        <release tarname="pkginfo-0.5-mingw32-beta-20120426-1-bin.tar.xz" />
-        <release tarname="pkginfo-0.4-mingw32-alpha-1-bin.tar.xz" />
+        <release tarname="pkginfo-0.6.3-mingw32-pre-20170905-1-bin.tar.xz" />
       </component>
     </package>
 

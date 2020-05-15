@@ -1,7 +1,7 @@
 MinGW Package Download and Installation Tool
 ============================================
 
-$Id: README.in,v 15e228fcee93 2013/09/04 15:45:38 keithmarshall $
+$Id$
 
 Description
 -----------
@@ -51,4 +51,4 @@ Reporting Bugs
 
 Please file bug reports as directed at http://mingw.org/Reporting_Bugs
 
-$RCSfile: README.in,v $: end of file
+$RCSfile$: end of file

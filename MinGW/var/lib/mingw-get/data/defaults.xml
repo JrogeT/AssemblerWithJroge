@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile project="MinGW" application="mingw-get">
   <!--
-    $Id: profile.xml,v ee72dbfcc656 2013/09/20 12:05:26 keithmarshall $
+    $Id$
 
     Written by Keith Marshall  <keithmarshall@users.sourceforge.net>
-    Copyright (C) 2009, 2010, 2012, 2013, MinGW.org Project
+    Copyright (C) 2009, 2010, 2012, 2013, 2017, MinGW.org Project
 
 
     Master configuration profile for mingw-get.
@@ -70,7 +70,7 @@
     <option name="start-menu" />
   </preferences>
 
-  <repository uri="http://prdownloads.sourceforge.net/mingw/%F.xml.lzma?download">
+  <repository uri="http://osdn.net/dl/mingw/%F.xml.lzma">
     <!--
       The "repository" specification identifies the URI where package
       list catalogues may be downloaded; each catalogue download URI is
@@ -134,4 +134,4 @@
   </system-map>
 
 </profile>
-<!-- $RCSfile: profile.xml,v $: end of file -->
+<!-- $RCSfile$: end of file -->

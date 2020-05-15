@@ -1,7 +1,7 @@
 /*
  * unlink.js
  *
- * $Id: unlink.js,v cd9a9ac85727 2013/09/20 08:43:04 keithmarshall $
+ * $Id$
  *
  * Invoke the Windows Scripting Host to remove specified files, typically
  * from the user's or all users' start menu or desktop directories.
@@ -242,4 +242,4 @@ for( i = 0; i < argv.length; i++ )
   }
 }
 
-/* $RCSfile: unlink.js,v $: end of file */
+/* $RCSfile$: end of file */

@@ -4,7 +4,7 @@
  * Public interface declarations for (approximately) POSIX conforming
  * dlopen(), dlsym(), dlclose(), and dlerror() API functions.
  *
- * $Id: dlfcn.h,v 82d2db93e4de 2014/11/11 18:13:14 keithmarshall $
+ * $Id: dlfcn.h,v fbab264d5f1d 2014/11/11 18:13:14 keithmarshall $
  *
  * Written by Keith Marshall <keithmarshall@users.sourceforge.net>
  * Copyright (C) 2014, MinGW.org Project

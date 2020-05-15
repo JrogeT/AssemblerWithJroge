@@ -1,43 +1,37 @@
 /*
-	windows.h - main header file for the Win32 API
-
-	Written by Anders Norlander <anorland@hem2.passagen.se>
-
-	This file is part of a free library for the Win32 API.
-
-	This library is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-*/
+ * windows.h
+ *
+ * Include supplementary headers for core Win32 API definitions.
+ *
+ * $Id: windows.h,v 500a21dbc6ad 2019/02/03 15:47:20 keith $
+ *
+ * Written by Anders Norlander <anorland@hem2.passagen.se>
+ * Copyright (C) 1998-2003, 2006, 2007, 2016, 2017, 2019, MinGW.org Project
+ *
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice (including the next
+ * paragraph) shall be included in all copies or substantial portions of the
+ * Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ *
+ */
 #ifndef _WINDOWS_H
-#define _WINDOWS_H
-#if __GNUC__ >=3
 #pragma GCC system_header
-#endif
-
-/* translate GCC target defines to MS equivalents. Keep this synchronized
-   with winnt.h. */
-#if defined(__i686__) && !defined(_M_IX86)
-#define _M_IX86 600
-#elif defined(__i586__) && !defined(_M_IX86)
-#define _M_IX86 500
-#elif defined(__i486__) && !defined(_M_IX86)
-#define _M_IX86 400
-#elif defined(__i386__) && !defined(_M_IX86)
-#define _M_IX86 300
-#endif
-#if defined(_M_IX86) && !defined(_X86_)
-#define _X86_
-#elif defined(_M_ALPHA) && !defined(_ALPHA_)
-#define _ALPHA_
-#elif defined(_M_PPC) && !defined(_PPC_)
-#define _PPC_
-#elif defined(_M_MRX000) && !defined(_MIPS_)
-#define _MIPS_
-#elif defined(_M_M68K) && !defined(_68K_)
-#define _68K_
-#endif
+#define _WINDOWS_H
 
 #ifdef RC_INVOKED
 /* winresrc.h includes the necessary headers */
@@ -51,24 +45,12 @@
 #if !(defined NOGDI || defined  _WINGDI_H)
 #include <wingdi.h>
 #endif
-#ifndef _WINUSER_H
 #include <winuser.h>
-#endif
-#ifndef _WINNLS_H
 #include <winnls.h>
-#endif
-#ifndef _WINVER_H
 #include <winver.h>
-#endif
-#ifndef _WINNETWK_H
 #include <winnetwk.h>
-#endif
-#ifndef _WINREG_H
 #include <winreg.h>
-#endif
-#ifndef _WINSVC_H
 #include <winsvc.h>
-#endif
 
 #ifndef WIN32_LEAN_AND_MEAN
 #include <cderr.h>
@@ -86,30 +68,36 @@
 #include <commdlg.h>
 #include <winspool.h>
 #endif
-#if defined(Win32_Winsock)
-#warning "The  Win32_Winsock macro name is deprecated.\
-    Please use __USE_W32_SOCKETS instead"
-#ifndef __USE_W32_SOCKETS
-#define __USE_W32_SOCKETS
+#if defined Win32_Winsock
+#warning "The Win32_Winsock macro is deprecated; use __USE_W32_SOCKETS instead."
+# ifndef __USE_W32_SOCKETS
+#  define __USE_W32_SOCKETS
+# endif
 #endif
-#endif
-#if defined(__USE_W32_SOCKETS) || !(defined(__CYGWIN__) || defined(__MSYS__) || defined(_UWIN))
-#if (_WIN32_WINNT >= 0x0400)
-#include <winsock2.h>
-/*
- * MS likes to include mswsock.h here as well,
- * but that can cause undefined symbols if
- * winsock2.h is included before windows.h
- */
-#else
-#include <winsock.h>
-#endif /*  (_WIN32_WINNT >= 0x0400) */
+#if defined __USE_W32_SOCKETS \
+ || ! (defined __CYGWIN__ || defined __MSYS__ || defined _UWIN)
+ /* The WinSock API should be declared; including <winsock.h>,
+  * under the control of the __USE_MINGW_WINSOCK_DEFAULT feature
+  * test, will ensure that we make an informed choice between the
+  * WinSock v1.1 API, as declared in <winsock.h>, and WinSock v2,
+  * as declared in <winsock2.h>, as the preferred default level
+  * of WinSock API support to be offered.
+  */
+# define __USE_MINGW_WINSOCK_DEFAULT
+# include "winsock.h"
+ /*
+  * FIXME: strict Microsoft compatibility may require inclusion
+  * of <mswsock.h> here as well; however, this has been observed
+  * to produce undefined symbol errors, if <winsock2.h> has been
+  * included before <windows.h>, so we omit this.
+  */
+# /* include <mswsock.h> */
 #endif
 #ifndef NOGDI
 /* In older versions we disallowed COM declarations in __OBJC__
    because of conflicts with @interface directive.  Define _OBJC_NO_COM
-   to keep this behaviour.  */ 
-#if !defined (_OBJC_NO_COM) 
+   to keep this behaviour.  */
+#if !defined (_OBJC_NO_COM)
 #if (__GNUC__ >= 3) || defined (__WATCOMC__)
 #include <ole2.h>
 #endif
@@ -128,4 +116,4 @@
 #undef BOOL
 #endif
 
-#endif
+#endif	/* _WINDOWS_H: $RCSfile: windows.h,v $: end of file */

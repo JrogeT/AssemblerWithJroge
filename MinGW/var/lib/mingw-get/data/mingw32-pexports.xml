@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://mingw.org" issue="2015090800">
+<software-distribution project="MinGW" home="http://mingw.org" issue="2020013100">
 
   <!-- File: mingw32-pexports.xml -->
 
   <package-collection subsystem="mingw32">
-    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+    <download-host uri="http://osdn.net/dl/mingw/%F" />
     <package name="mingw32-pexports" alias="pexports">
       <description lang="en" title="Generate .def files for DLLs" >
         <paragraph>pexports can extract information from DLLs to create
@@ -32,24 +32,45 @@
       <source tarname="pexports-%-mingw32-%-src.tar.%" />
 
       <component class="bin">
-        <release tarname="pexports-0.47-mingw32-bin.tar.xz" />
-        <release tarname="pexports-0.46-mingw32-bin.tar.xz" />
-        <release tarname="pexports-0.44-1-mingw32-bin.tar.lzma" />
+        <release tarname="pexports-0.48-mingw32-bin.tar.xz" />
+        <release tarname="pexports-0.47-mingw32-bin.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.46-mingw32-bin.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.44-1-mingw32-bin.tar.lzma">
+          <download tarname="none" />
+        </release>
         <requires eq="mingw32-gcc-core-*-mingw32-*-bin.tar" />
         <requires eq="mingw32-mingwrt-*-mingw32-*-dev.tar" />
         <requires eq="mingw32-w32api-*-mingw32-*-dev.tar" />
       </component>
 
       <component class="doc">
-        <release tarname="pexports-0.47-mingw32-doc.tar.xz" />
-        <release tarname="pexports-0.46-mingw32-doc.tar.xz" />
-        <release tarname="pexports-0.44-1-mingw32-doc.tar.lzma" />
+        <release tarname="pexports-0.48-mingw32-doc.tar.xz" />
+        <release tarname="pexports-0.47-mingw32-doc.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.46-mingw32-doc.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.44-1-mingw32-doc.tar.lzma">
+          <download tarname="none" />
+        </release>
       </component>
 
       <component class="lic">
-        <release tarname="pexports-0.47-mingw32-lic.tar.xz" />
-        <release tarname="pexports-0.46-mingw32-lic.tar.xz" />
-        <release tarname="pexports-0.44-1-mingw32-lic.tar.lzma" />
+        <release tarname="pexports-0.48-mingw32-lic.tar.xz" />
+        <release tarname="pexports-0.47-mingw32-lic.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.46-mingw32-lic.tar.xz">
+          <download tarname="none" />
+        </release>
+        <release tarname="pexports-0.44-1-mingw32-lic.tar.lzma">
+          <download tarname="none" />
+        </release>
       </component>
     </package>
 

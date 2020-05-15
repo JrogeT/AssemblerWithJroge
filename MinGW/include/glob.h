@@ -5,10 +5,10 @@
  * Header file supporting a MinGW implementation of an (approximately)
  * POSIX conforming glob() and globfree() API.
  *
- * $Id: glob.h,v 1c1246004568 2014/11/07 01:23:36 keithmarshall $
+ * $Id: glob.h,v 530bd5f17ca2 2017/02/12 10:12:06 keithmarshall $
  *
  * Written by Keith Marshall <keithmarshall@users.sourceforge.net>
- * Copyright (C) 2011, 2012, 2014, MinGW.org Project.
+ * Copyright (C) 2011, 2012, 2014, 2016, 2017, MinGW.org Project.
  *
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
@@ -32,12 +32,15 @@
  *
  */
 #define _GLOB_H  1
-#include <_mingw.h>
 #pragma GCC system_header
+
+/* All MinGW.org system headers are required to include <_mingw.h>.
+ */
+#include <_mingw.h>
 
 #ifndef RC_INVOKED
 /* POSIX requires glob.h to define the size_t type; we need to
- * get this from GCC, just as sys/types.h does.
+ * get this from GCC's <stddef.h>, just as <sys/types.h> does.
  */
 #define __need_size_t
 #include <stddef.h>
@@ -73,8 +76,8 @@ enum {
    * GNU's implementation of glob() supports a supplementary set of
    * options, none of which are required by POSIX.  We include these
    * for reference, and to reserve the flag identities for a possible
-   * future implementation; the current MinGW implementation does not
-   * support them.
+   * future implementation; of these extensions, the current MinGW
+   * implementation supports only GLOB_BRACE.
    */
   __GLOB_TILDE_OFFSET,
   __GLOB_TILDE_CHECK_OFFSET,
@@ -94,10 +97,7 @@ enum {
    *			    but to better support the MS-Windows
    *			    file system, the MinGW implementation
    *			    of glob() performs a CASE INSENSITIVE
-   *			    character match by default, (except
-   *			    when matching within character group
-   *			    patterns, which are ALWAYS assumed to
-   *			    require CASE SENSITIVE matching).
+   *			    character match by default.
    */
   __GLOB_CASEMATCH_OFFSET,
   /*
@@ -118,6 +118,11 @@ enum {
 #define GLOB_NOESCAPE	  __GLOB_FLAG__(NOESCAPE)
 #define GLOB_NOSORT	  __GLOB_FLAG__(NOSORT)
 
+/* Flag definitions for those GNU extensions, as listed above, for which
+ * we provide support; (i.e. GLOB_BRACE only, at present).
+ */
+#define GLOB_BRACE	  __GLOB_FLAG__(BRACE)
+
 /* Additional flags definitions, for MinGW specific extensions.
  */
 #define GLOB_CASEMATCH	  __GLOB_FLAG__(CASEMATCH)
@@ -132,15 +137,17 @@ _BEGIN_C_DECLS
  * However, our actual function implementations are provided via this
  * pair of reserved function names...
  */
-int __mingw_glob (const char *, int, int (*)( const char *, int ), glob_t *);
+int __mingw_glob (const char *, int, int (*)(const char *, int), glob_t *);
 void __mingw_globfree (glob_t *);
 
 /* ...to which the standard names are then mapped as aliases,
  * via __CRT_ALIAS inline function expansion.
  */
 __CRT_ALIAS __JMPSTUB__(( FUNCTION = glob ))
-int glob (const char *__pattern, int __flags, int (*__errfunc)(), glob_t *__data)
+# define __ERRFUNC_P  (*__errfunc) (const char *, int)
+int glob (const char *__pattern, int __flags, int __ERRFUNC_P, glob_t *__data)
 { return __mingw_glob (__pattern, __flags, __errfunc, __data); }
+# undef __ERRFUNC_P
 
 __CRT_ALIAS __JMPSTUB__(( FUNCTION = globfree ))
 void globfree (glob_t *__data){ return __mingw_globfree (__data); }
@@ -156,4 +163,4 @@ _END_C_DECLS
 #define GLOB_NOSPACE	(3)
 
 #endif /* ! RC_INVOKED */
-#endif /* ! defined _GLOB_H */
+#endif /* !_GLOB_H: $RCSfile: glob.h,v $: end of file */

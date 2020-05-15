@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://mingw.org" issue="2013101200">
+<software-distribution project="MinGW" home="http://mingw.org" issue="2020011000">
 
   <!-- File: mingw32-zlib.xml -->
 
   <package-collection subsystem="mingw32">
-    <download-host uri="http://prdownloads.sourceforge.net/mingw/%F?download" />
+    <download-host uri="http://osdn.net/dl/mingw/%F" />
 
     <package name="mingw32-zlib" alias="zlib">
       <description lang="en" title="A Massively Spiffy Yet Delicately Unobtrusive Compression Library">
@@ -13,32 +13,24 @@
           uncompressed data.
         </paragraph>
       </description>
+      <affiliate group="MinGW Standard Libraries"/>
 
       <licence tarname="zlib-%-mingw32-%-lic.tar.%" />
       <source tarname="zlib-%-mingw32-%-src.tar.%" />
 
       <component class="doc">
-        <release tarname="zlib-1.2.8-1-mingw32-doc.tar.lzma" />
-        <release tarname="zlib-1.2.7-1-mingw32-doc.tar.lzma" />
-        <release tarname="zlib-1.2.5-4-mingw32-doc.tar.lzma" />
-        <release tarname="zlib-1.2.5-1-mingw32-doc.tar.lzma" />
-        <release tarname="zlib-1.2.3-1-mingw32-doc.tar.gz" />
+        <release tarname="zlib-1.2.11-1-mingw32-doc.tar.xz" />
+        <release tarname="zlib-1.2.8-2-mingw32-doc.tar.xz" />
       </component>
 
       <component class="lic">
-        <release tarname="zlib-1.2.8-1-mingw32-lic.tar.lzma" />
-        <release tarname="zlib-1.2.7-1-mingw32-lic.tar.lzma" />
-        <release tarname="zlib-1.2.5-4-mingw32-lic.tar.lzma" />
-        <release tarname="zlib-1.2.5-1-mingw32-lic.tar.lzma" />
-        <release tarname="zlib-1.2.3-1-mingw32-lic.tar.gz" />
+        <release tarname="zlib-1.2.11-1-mingw32-lic.tar.xz" />
+        <release tarname="zlib-1.2.8-2-mingw32-lic.tar.xz" />
       </component>
 
       <component class="man">
-        <release tarname="zlib-1.2.8-1-mingw32-man.tar.lzma" />
-        <release tarname="zlib-1.2.7-1-mingw32-man.tar.lzma" />
-        <release tarname="zlib-1.2.5-4-mingw32-man.tar.lzma" />
-        <release tarname="zlib-1.2.5-1-mingw32-man.tar.lzma" />
-        <release tarname="zlib-1.2.3-1-mingw32-man.tar.gz" />
+        <release tarname="zlib-1.2.11-1-mingw32-man.tar.xz" />
+        <release tarname="zlib-1.2.8-2-mingw32-man.tar.xz" />
       </component>
     </package>
 
@@ -51,44 +43,20 @@
           package provides documentation.
         </paragraph>
       </description>
-      <affiliate group="Mingw Standard Libraries"/>
+      <affiliate group="MinGW Standard Libraries"/>
 
       <licence tarname="zlib-%-mingw32-%-lic.tar.%" />
       <source tarname="zlib-%-mingw32-%-src.tar.%" />
 
       <component class="dll">
-        <release tarname="libz-1.2.3-1-mingw32-dll-1.tar.gz" />
-        <release tarname="libz-1.2.5-1-mingw32-dll-1.tar.lzma" >
-          <requires eq="mingw32-libgcc-*-mingw32-dll-1.tar" />
-        </release>
-        <release tarname="libz-1.2.5-4-mingw32-dll-1.tar.lzma" >
-          <requires eq="mingw32-libgcc-*-mingw32-dll-1.tar" />
-        </release>
-        <release tarname="libz-1.2.7-1-mingw32-dll-1.tar.lzma" >
-          <requires eq="mingw32-libgcc-*-mingw32-dll-1.tar" />
-        </release>
-	<release tarname="libz-1.2.8-1-mingw32-dll-1.tar">
-	  <download tarname="zlib-1.2.8-1-mingw32-dll.tar.lzma" />
-	</release>
+        <release tarname="libz-1.2.11-1-mingw32-dll-1.tar.xz" />
+        <release tarname="libz-1.2.8-2-mingw32-dll-1.tar.xz" />
       </component>
 
       <component class="dev">
-        <release tarname="libz-1.2.3-1-mingw32-dev.tar.gz" >
-          <requires eq="mingw32-libz-%-mingw32-%-dll-1.tar" />
-        </release>
-        <release tarname="libz-1.2.5-1-mingw32-dev.tar.lzma" >
-          <requires eq="mingw32-libz-%-mingw32-%-dll-1.tar" />
-        </release>
-        <release tarname="libz-1.2.5-4-mingw32-dev.tar.lzma" >
-          <requires eq="mingw32-libz-%-mingw32-%-dll-1.tar" />
-        </release>
-        <release tarname="libz-1.2.7-1-mingw32-dev.tar.lzma" >
-          <requires eq="mingw32-libz-%-mingw32-%-dll-1.tar" />
-        </release>
-	<release tarname="libz-1.2.8-1-mingw32-dev-1.tar" >
-	  <download tarname="zlib-1.2.8-1-mingw32-dev.tar.lzma" />
-	  <requires eq="mingw32-libz-%-mingw32-dll-1.tar" />
-	</release>
+        <requires eq="mingw32-libz-%-mingw32-%-dll-1.tar" />
+        <release tarname="libz-1.2.11-1-mingw32-dev.tar.xz" />
+        <release tarname="libz-1.2.8-2-mingw32-dev.tar.xz" />
       </component>
     </package>
 
@@ -145,8 +113,9 @@
       <source tarname="zlib-%-mingw32-%-src.tar.%" />
 
       <component class="dll">
+        <requires eq="mingw32-libz-*-mingw32-dll-1.tar" />
+        <requires eq="mingw32-libbz2-*-mingw32-dll-2.tar" />
         <requires eq="mingw32-libgcc-*-mingw32-dll-1.tar" />
-        <requires eq="mingw32-libz-%-mingw32-dll-1.tar" />
         <release tarname="libminizip-1.2.7-1-mingw32-dll-1.tar.lzma" />
       </component>
 
@@ -159,4 +128,6 @@
 
   </package-collection>
 </software-distribution>
-<!-- vim: set nocompatible expandtab fileformat=unix textwidth=80 tabstop=2 shiftwidth=2: -->
+
+<!-- vim: set nocompatible expandtab showcmd tabstop=2 shiftwidth=2: -->
+<!-- vim: set fileformat=unix textwidth=80: -->

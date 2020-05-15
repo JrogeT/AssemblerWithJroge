@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<software-distribution project="MinGW" home="http://www.mingw.org" issue="2015092000">
+<software-distribution project="MinGW" home="http://www.mingw.org" issue="2020043000">
 
   <!-- File: mingw32-package-list.xml -->
 
@@ -27,40 +27,35 @@
   <package-list issue="2012073100" catalogue="mingw32-autoconf" />
   <package-list issue="2012073100" catalogue="mingw32-automake" />
   <package-list issue="2012073100" catalogue="mingw32-basic-bsdtar" />
-  <package-list issue="2015092000" catalogue="mingw32-binutils" />
+  <package-list issue="2019021100" catalogue="mingw32-binutils" />
   <package-list issue="2012073100" catalogue="mingw32-bzip2" />
-  <package-list issue="2015070300" catalogue="mingw32-dos2unix" />
+  <package-list issue="2017122100" catalogue="mingw32-dos2unix" />
   <package-list issue="2013091000" catalogue="mingw32-expat" />
   <package-list issue="2011050500" catalogue="mingw32-gcc3" />
-  <package-list issue="2014082600" catalogue="mingw32-gcc4" />
+  <package-list issue="2020030600" catalogue="mingw32-gcc4" />
   <package-list issue="2012073100" catalogue="mingw32-gcc-tools" />
   <package-list issue="2013091501" catalogue="mingw32-gdb" />
   <package-list issue="2012073100" catalogue="mingw32-gendef" />
-  <package-list issue="2015090600" catalogue="mingw32-gettext" />
-  <package-list issue="2013090900" catalogue="mingw32-gmp" />
+  <package-list issue="2018122800" catalogue="mingw32-gettext" />
+  <package-list issue="2018122800" catalogue="mingw32-gmp" />
+  <package-list issue="2020030500" catalogue="mingw32-isl" />
   <package-list issue="2012073100" catalogue="mingw32-libarchive" />
-  <package-list issue="2014042900" catalogue="mingw32-libiconv" />
+  <package-list issue="2018122800" catalogue="mingw32-libiconv" />
   <package-list issue="2012073100" catalogue="mingw32-libtool" />
   <package-list issue="2012021600" catalogue="mingw32-lua" />
   <package-list issue="2012090201" catalogue="mingw32-make" />
-  <package-list issue="2013100400" catalogue="mingw32-mingw-get" />
+  <package-list issue="2020031700" catalogue="mingw32-mingw-get" />
   <package-list issue="2012073100" catalogue="mingw32-mingw-utils" />
   <package-list issue="2012073100" catalogue="mingw32-mgwport" />
-  <package-list issue="2015082000" catalogue="mingw32-mpc" />
-  <package-list issue="2013102300" catalogue="mingw32-mpfr" />
-  <package-list issue="2015090800" catalogue="mingw32-pexports" />
+  <package-list issue="2020030500" catalogue="mingw32-mpc" />
+  <package-list issue="2020030500" catalogue="mingw32-mpfr" />
+  <package-list issue="2020013100" catalogue="mingw32-pexports" />
   <package-list issue="2012073100" catalogue="mingw32-popt" />
-  <package-list issue="2013090900" catalogue="mingw32-pthreads-w32" />
-  <package-list issue="2014122800" catalogue="mingw32-runtime" />
+  <package-list issue="2016082200" catalogue="mingw32-pthreads-w32" />
+  <package-list issue="2020043000" catalogue="mingw32-runtime" />
   <package-list issue="2013070100" catalogue="mingw32-wsl-candidate" />
   <package-list issue="2012073100" catalogue="mingw32-xz" />
-  <package-list issue="2013101200" catalogue="mingw32-zlib" />
-
-  <!-- "real" packages ~~ user contributed -->
-  <package-list issue="2011101400" catalogue="mingw32-libunistring" />
-  <package-list issue="2011101100" catalogue="mingw32-pdcurses" />
-  <package-list issue="2013101200" catalogue="mingw32-tcltk" />
-  <package-list issue="2013102800" catalogue="mingw32-xerces-c" />
+  <package-list issue="2020011000" catalogue="mingw32-zlib" />
 
   <!-- "virtual" packages -->
   <package-list issue="2013072200" catalogue="mingw32-base" />
